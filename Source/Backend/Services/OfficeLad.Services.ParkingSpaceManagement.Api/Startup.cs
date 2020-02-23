@@ -32,7 +32,7 @@ namespace OfficeLad.Services.ParkingSpaceManagement.Api
             {
                 endpoints.MapGet("/", async context =>
                 {
-                    await context.Response.WriteAsync("Hello World!");
+                    await context.Response.WriteAsync("Parking Space Management Api!");
                 });
             });
         }

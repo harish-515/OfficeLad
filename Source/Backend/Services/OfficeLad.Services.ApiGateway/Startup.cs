@@ -32,7 +32,7 @@ namespace OfficeLad.Services.ApiGateway
             {
                 endpoints.MapGet("/", async context =>
                 {
-                    await context.Response.WriteAsync("Hello World!");
+                    await context.Response.WriteAsync("Api Gateway!");
                 });
             });
         }

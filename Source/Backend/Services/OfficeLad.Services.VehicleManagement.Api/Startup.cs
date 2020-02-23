@@ -32,7 +32,7 @@ namespace OfficeLad.Services.VehicleManagement.Api
             {
                 endpoints.MapGet("/", async context =>
                 {
-                    await context.Response.WriteAsync("Hello World!");
+                    await context.Response.WriteAsync("Vehicle Management Api!");
                 });
             });
         }
