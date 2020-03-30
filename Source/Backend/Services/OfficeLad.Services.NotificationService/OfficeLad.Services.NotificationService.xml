@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OfficeLad.Services.NotificationService</name>
+    </assembly>
+    <members>
+        <member name="T:OfficeLad.Services.NotificationService.Program">
+            <summary>
+            Notification Service.
+            </summary>
+        </member>
+        <member name="M:OfficeLad.Services.NotificationService.Program.Main(System.String[])">
+            <summary>
+            Defines the entry point of the application.
+            </summary>
+            <param name="args">The arguments.</param>
+        </member>
+        <member name="M:OfficeLad.Services.NotificationService.Program.CreateHostBuilder(System.String[])">
+            <summary>
+            Creates the host builder.
+            </summary>
+            <param name="args">The arguments.</param>
+            <returns>Host builder.</returns>
+        </member>
+        <member name="T:OfficeLad.Services.NotificationService.Worker">
+            <summary>
+            Notification service.
+            </summary>
+            <seealso cref="T:Microsoft.Extensions.Hosting.BackgroundService" />
+        </member>
+        <member name="M:OfficeLad.Services.NotificationService.Worker.#ctor(Microsoft.Extensions.Logging.ILogger{OfficeLad.Services.NotificationService.Worker})">
+            <summary>
+            Initializes a new instance of the <see cref="T:OfficeLad.Services.NotificationService.Worker"/> class.
+            </summary>
+            <param name="logger">The logger.</param>
+        </member>
+        <member name="M:OfficeLad.Services.NotificationService.Worker.ExecuteAsync(System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>
