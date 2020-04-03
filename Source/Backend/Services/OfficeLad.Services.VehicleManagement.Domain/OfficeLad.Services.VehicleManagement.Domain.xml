@@ -4,5 +4,17 @@
         <name>OfficeLad.Services.VehicleManagement.Domain</name>
     </assembly>
     <members>
+        <member name="T:OfficeLad.Services.VehicleManagement.Domain.Entities.Vehicle">
+            <summary>
+            Vehicle Entity.
+            </summary>
+            <seealso cref="T:Centaurus.Domain.Entity`1" />
+        </member>
+        <member name="M:OfficeLad.Services.VehicleManagement.Domain.Entities.Vehicle.#ctor(System.Guid)">
+            <summary>
+            Initializes a new instance of the <see cref="T:OfficeLad.Services.VehicleManagement.Domain.Entities.Vehicle"/> class.
+            </summary>
+            <param name="id">The value of the entity key.</param>
+        </member>
     </members>
 </doc>
