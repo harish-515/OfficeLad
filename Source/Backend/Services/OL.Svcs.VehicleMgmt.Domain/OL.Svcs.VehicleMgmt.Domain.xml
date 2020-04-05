@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OL.Svcs.VehicleMgmt.Domain</name>
+    </assembly>
+    <members>
+        <member name="T:OL.Svcs.VehicleMgmt.Domain.Entities.Vehicle">
+            <summary>
+            Vehicle entity.
+            </summary>
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Domain.Entities.Vehicle.#ctor(System.Guid)">
+            <summary>
+            Initializes a new instance of the <see cref="T:OL.Svcs.VehicleMgmt.Domain.Entities.Vehicle"/> class.
+            </summary>
+            <param name="id">The value of the entity key.</param>
+        </member>
+        <member name="P:OL.Svcs.VehicleMgmt.Domain.Entities.Vehicle.LicenseNumber">
+            <summary>
+            Gets or sets the license number.
+            </summary>
+            <value>
+            The license number.
+            </value>
+        </member>
+        <member name="P:OL.Svcs.VehicleMgmt.Domain.Entities.Vehicle.Brand">
+            <summary>
+            Gets or sets the brand.
+            </summary>
+            <value>
+            The brand.
+            </value>
+        </member>
+        <member name="P:OL.Svcs.VehicleMgmt.Domain.Entities.Vehicle.Type">
+            <summary>
+            Gets or sets the type.
+            </summary>
+            <value>
+            The type.
+            </value>
+        </member>
+        <member name="P:OL.Svcs.VehicleMgmt.Domain.Entities.Vehicle.OwnerId">
+            <summary>
+            Gets or sets the owner identifier.
+            </summary>
+            <value>
+            The owner identifier.
+            </value>
+        </member>
+    </members>
+</doc>
