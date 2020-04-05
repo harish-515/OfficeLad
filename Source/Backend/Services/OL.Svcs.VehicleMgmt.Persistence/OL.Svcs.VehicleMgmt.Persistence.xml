@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OL.Svcs.VehicleMgmt.Persistence</name>
+    </assembly>
+    <members>
+        <member name="T:OL.Svcs.VehicleMgmt.Persistence.Configuration.DIConfiguration">
+            <summary>
+            Dependency Injection Configuration class.
+            </summary>
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Persistence.Configuration.DIConfiguration.AddPersistence(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Configure dependency injection in persistence layer.
+            </summary>
+            <param name="services">The services.</param>
+            <param name="configuration">The configuration.</param>
+            <returns>Service Collection.</returns>
+        </member>
+        <member name="T:OL.Svcs.VehicleMgmt.Persistence.Configuration.VehicleConfiguration">
+            <summary>
+            Vehicle entity configuration.
+            </summary>
+            <seealso cref="T:Microsoft.EntityFrameworkCore.IEntityTypeConfiguration`1" />
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Persistence.Configuration.VehicleConfiguration.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{OL.Svcs.VehicleMgmt.Domain.Entities.Vehicle})">
+            <summary>
+            Configures the entity.
+            </summary>
+            <param name="builder">The builder to be used to configure the entity type.</param>
+        </member>
+        <member name="T:OL.Svcs.VehicleMgmt.Persistence.GenericRepository`2">
+            <summary>
+            Implementation of Generic Repository for all entities in domain.
+            </summary>
+            <typeparam name="TEntity">The type of the entity.</typeparam>
+            <typeparam name="TEntityId">The type of the entity identifier.</typeparam>
+            <seealso cref="T:OL.Svcs.VehicleMgmt.Application.Abstractions.IGenericRepository`2" />
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Persistence.GenericRepository`2.#ctor(OL.Svcs.VehicleMgmt.Persistence.VehicleManagementDbContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:OL.Svcs.VehicleMgmt.Persistence.GenericRepository`2"/> class.
+            </summary>
+            <param name="vehicleManagementDbContext">The vehicle management database context.</param>
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Persistence.GenericRepository`2.Add(`0)">
+            <inheritdoc />
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Persistence.GenericRepository`2.AddRange(System.Collections.Generic.IEnumerable{`0})">
+            <inheritdoc />
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Persistence.GenericRepository`2.GetAllAsync">
+            <inheritdoc />
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Persistence.GenericRepository`2.GetByIdAsync(`1)">
+            <inheritdoc />
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Persistence.GenericRepository`2.HasChanges">
+            <inheritdoc />
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Persistence.GenericRepository`2.Any">
+            <inheritdoc />
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Persistence.GenericRepository`2.Remove(`0)">
+            <inheritdoc />
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Persistence.GenericRepository`2.SaveAsync(System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="T:OL.Svcs.VehicleMgmt.Persistence.Migrations.initial">
+            <summary>
+            Initial migration.
+            </summary>
+            <seealso cref="T:Microsoft.EntityFrameworkCore.Migrations.Migration" />
+            <summary>
+            Initial mifration.
+            </summary>
+            <seealso cref="T:Microsoft.EntityFrameworkCore.Migrations.Migration" />
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Persistence.Migrations.initial.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Persistence.Migrations.initial.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Persistence.Migrations.initial.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:OL.Svcs.VehicleMgmt.Persistence.VehicleManagementDbContext">
+            <summary>
+            Vehicle Management Database context.
+            </summary>
+            <seealso cref="T:Microsoft.EntityFrameworkCore.DbContext" />
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Persistence.VehicleManagementDbContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{OL.Svcs.VehicleMgmt.Persistence.VehicleManagementDbContext})">
+            <summary>
+            Initializes a new instance of the <see cref="T:OL.Svcs.VehicleMgmt.Persistence.VehicleManagementDbContext"/> class.
+            </summary>
+            <param name="options">The options.</param>
+        </member>
+        <member name="P:OL.Svcs.VehicleMgmt.Persistence.VehicleManagementDbContext.Vehicles">
+            <summary>
+            Gets or sets the vehicles.
+            </summary>
+            <value>
+            The vehicles DbSet.
+            </value>
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Persistence.VehicleManagementDbContext.SaveChangesAsync(System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Persistence.VehicleManagementDbContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OL.Svcs.VehicleMgmt.Api</name>
+    </assembly>
+    <members>
+        <member name="T:OL.Svcs.VehicleMgmt.Api.Program">
+            <summary>
+            Vehicle Management Service Program.
+            </summary>
+        </member>
+        <member name="P:OL.Svcs.VehicleMgmt.Api.Program.Configuration">
+            <summary>
+            Gets the configuration.
+            </summary>
+            <value>
+            The configuration.
+            </value>
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Api.Program.Main(System.String[])">
+            <summary>
+            Defines the entry point of the application.
+            </summary>
+            <param name="args">The arguments.</param>
+            <returns>Task object.</returns>
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Api.Program.CreateHostBuilder(System.String[])">
+            <summary>
+            Creates the host builder.
+            </summary>
+            <param name="args">The arguments.</param>
+            <returns>Host builder object.</returns>
+        </member>
+        <member name="T:OL.Svcs.VehicleMgmt.Api.Startup">
+            <summary>
+            Startup class.
+            </summary>
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Api.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            Initializes a new instance of the <see cref="T:OL.Svcs.VehicleMgmt.Api.Startup"/> class.
+            </summary>
+            <param name="configuration">The configuration.</param>
+            <param name="environment">The environment.</param>
+        </member>
+        <member name="P:OL.Svcs.VehicleMgmt.Api.Startup.Configuration">
+            <summary>
+            Gets the configuration.
+            </summary>
+            <value>
+            The configuration.
+            </value>
+        </member>
+        <member name="P:OL.Svcs.VehicleMgmt.Api.Startup.Environment">
+            <summary>
+            Gets the environment.
+            </summary>
+            <value>
+            The environment.
+            </value>
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Api.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method gets called by the runtime.
+            Use this method to add services to the container.
+            For more information on how to configure your application,
+            visit https://go.microsoft.com/fwlink/?LinkID=398940.
+            </summary>
+            <param name="services">The services.</param>
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Api.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            This method gets called by the runtime.
+            Use this method to configure the HTTP request pipeline.
+            Configures the specified application.
+            </summary>
+            <param name="app">The application.</param>
+        </member>
+    </members>
+</doc>
