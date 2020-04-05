@@ -13,14 +13,28 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="OfficeLad.Services.VehicleManagement.Application.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <AdditionalFiles Include="..\SolutionItems\stylecop.json" Link="stylecop.json" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="MediatR" Version="8.0.1" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="8.0.0" />
     <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OfficeLad.Services.VehicleManagement.Domain\OfficeLad.Services.VehicleManagement.Domain.csproj" />
   </ItemGroup>
 
 </Project>

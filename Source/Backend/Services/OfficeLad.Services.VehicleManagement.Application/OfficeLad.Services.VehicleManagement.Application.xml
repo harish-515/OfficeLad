@@ -4,5 +4,124 @@
         <name>OfficeLad.Services.VehicleManagement.Application</name>
     </assembly>
     <members>
+        <member name="T:OfficeLad.Services.VehicleManagement.Application.Abstractions.IGenericRepository`2">
+            <summary>
+            Generic repository for all entities in domain.
+            </summary>
+            <typeparam name="TEntity">Entity type.</typeparam>
+            <typeparam name="TEntityId">Entity Id type.</typeparam>
+        </member>
+        <member name="M:OfficeLad.Services.VehicleManagement.Application.Abstractions.IGenericRepository`2.GetByIdAsync(`1)">
+            <summary>
+            Gets an entity asynchronously with provided id.
+            </summary>
+            <param name="id">The entity id.</param>
+            <returns>The entity.</returns>
+        </member>
+        <member name="M:OfficeLad.Services.VehicleManagement.Application.Abstractions.IGenericRepository`2.GetAllAsync">
+            <summary>
+            Gets all entities asynchronously.
+            </summary>
+            <returns>All Entities.</returns>
+        </member>
+        <member name="M:OfficeLad.Services.VehicleManagement.Application.Abstractions.IGenericRepository`2.Any">
+            <summary>
+            Checks if the table contains an entity.
+            </summary>
+            <returns>
+              <c>true</c> if the table has entities; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:OfficeLad.Services.VehicleManagement.Application.Abstractions.IGenericRepository`2.SaveAsync(System.Threading.CancellationToken)">
+            <summary>
+            Saves the Entity modified entity.
+            </summary>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns>
+            Task object.
+            </returns>
+        </member>
+        <member name="M:OfficeLad.Services.VehicleManagement.Application.Abstractions.IGenericRepository`2.HasChanges">
+            <summary>
+            Determines whether the entity has changes.
+            </summary>
+            <returns>
+              <c>true</c> if the entity has changes; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:OfficeLad.Services.VehicleManagement.Application.Abstractions.IGenericRepository`2.Add(`0)">
+            <summary>
+            Adds the specified entity.
+            </summary>
+            <param name="entity">The entity.</param>
+        </member>
+        <member name="M:OfficeLad.Services.VehicleManagement.Application.Abstractions.IGenericRepository`2.AddRange(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Adds the list of entities.
+            </summary>
+            <param name="entity">List of entities.</param>
+        </member>
+        <member name="M:OfficeLad.Services.VehicleManagement.Application.Abstractions.IGenericRepository`2.Remove(`0)">
+            <summary>
+            Removes the specified entity.
+            </summary>
+            <param name="entity">The entity.</param>
+        </member>
+        <member name="T:OfficeLad.Services.VehicleManagement.Application.Configuration.DIConfiguration">
+            <summary>
+            Dependency Injection Configuration class.
+            </summary>
+        </member>
+        <member name="M:OfficeLad.Services.VehicleManagement.Application.Configuration.DIConfiguration.AddApplication(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Configure dependency injection in application layer.
+            </summary>
+            <param name="services">The services.</param>
+            <returns>Service Collection.</returns>
+        </member>
+        <member name="T:OfficeLad.Services.VehicleManagement.Application.Miscellaneous.SeedSampleData.SampleDataSeeder">
+            <summary>
+            Sample Data Seeder class.
+            </summary>
+        </member>
+        <member name="M:OfficeLad.Services.VehicleManagement.Application.Miscellaneous.SeedSampleData.SampleDataSeeder.#ctor(OfficeLad.Services.VehicleManagement.Application.Abstractions.IGenericRepository{OfficeLad.Services.VehicleManagement.Domain.Entities.Vehicle,System.Guid})">
+            <summary>
+            Initializes a new instance of the <see cref="T:OfficeLad.Services.VehicleManagement.Application.Miscellaneous.SeedSampleData.SampleDataSeeder"/> class.
+            </summary>
+            <param name="vehicleRepository">The vehicle repository.</param>
+        </member>
+        <member name="M:OfficeLad.Services.VehicleManagement.Application.Miscellaneous.SeedSampleData.SampleDataSeeder.SeedAllAsync(System.Threading.CancellationToken)">
+            <summary>
+            Seeds all entities asynchronously.
+            </summary>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns>Task object.</returns>
+        </member>
+        <member name="T:OfficeLad.Services.VehicleManagement.Application.Miscellaneous.SeedSampleData.SeedSampleDataCommand">
+            <summary>
+            Seed Sample Data Command.
+            </summary>
+            <seealso cref="T:MediatR.IRequest" />
+        </member>
+        <member name="T:OfficeLad.Services.VehicleManagement.Application.Miscellaneous.SeedSampleData.SeedSampleDataCommandHandler">
+            <summary>
+            Seed sample data command handler.
+            </summary>
+            <seealso cref="T:MediatR.IRequestHandler`1" />
+        </member>
+        <member name="M:OfficeLad.Services.VehicleManagement.Application.Miscellaneous.SeedSampleData.SeedSampleDataCommandHandler.#ctor(OfficeLad.Services.VehicleManagement.Application.Abstractions.IGenericRepository{OfficeLad.Services.VehicleManagement.Domain.Entities.Vehicle,System.Guid})">
+            <summary>
+            Initializes a new instance of the <see cref="T:OfficeLad.Services.VehicleManagement.Application.Miscellaneous.SeedSampleData.SeedSampleDataCommandHandler"/> class.
+            </summary>
+            <param name="vehicleRepository">The vehicle repository.</param>
+        </member>
+        <member name="M:OfficeLad.Services.VehicleManagement.Application.Miscellaneous.SeedSampleData.SeedSampleDataCommandHandler.Handle(OfficeLad.Services.VehicleManagement.Application.Miscellaneous.SeedSampleData.SeedSampleDataCommand,System.Threading.CancellationToken)">
+            <summary>
+            Handles the specified request.
+            </summary>
+            <param name="request">The request.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns>unit value.</returns>
+        </member>
     </members>
 </doc>

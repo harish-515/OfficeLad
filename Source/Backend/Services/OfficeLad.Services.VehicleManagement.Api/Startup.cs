@@ -6,15 +6,45 @@ namespace OfficeLad.Services.VehicleManagement.Api
 {
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
-    using Microsoft.AspNetCore.Http;
+    using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Hosting;
+    using OfficeLad.Services.VehicleManagement.Application.Configuration;
+    using OfficeLad.Services.VehicleManagement.Persistence.Configuration;
+    using Serilog;
 
     /// <summary>
     /// Startup class.
     /// </summary>
     public class Startup
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Startup"/> class.
+        /// </summary>
+        /// <param name="configuration">The configuration.</param>
+        /// <param name="environment">The environment.</param>
+        public Startup(IConfiguration configuration, IWebHostEnvironment environment)
+        {
+            this.Configuration = configuration;
+            this.Environment = environment;
+        }
+
+        /// <summary>
+        /// Gets the configuration.
+        /// </summary>
+        /// <value>
+        /// The configuration.
+        /// </value>
+        public IConfiguration Configuration { get; }
+
+        /// <summary>
+        /// Gets the environment.
+        /// </summary>
+        /// <value>
+        /// The environment.
+        /// </value>
+        public IWebHostEnvironment Environment { get; }
+
         /// <summary>
         /// This method gets called by the runtime.
         /// Use this method to add services to the container.
@@ -24,6 +54,8 @@ namespace OfficeLad.Services.VehicleManagement.Api
         /// <param name="services">The services.</param>
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddPersistence(this.Configuration);
+            services.AddApplication();
         }
 
         /// <summary>
@@ -32,22 +64,25 @@ namespace OfficeLad.Services.VehicleManagement.Api
         /// Configures the specified application.
         /// </summary>
         /// <param name="app">The application.</param>
-        /// <param name="env">The environment.</param>
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app)
         {
-            if (env.IsDevelopment())
+            if (this.Environment.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseFileServer();
+            app.UseSerilogRequestLogging();
+
             app.UseRouting();
+            app.UseCors();
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGet("/", async context =>
-                {
-                    await context.Response.WriteAsync("Vehicle Management Api!");
-                });
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller}/{action=Index}/{id?}");
+                endpoints.MapControllers();
             });
         }
     }

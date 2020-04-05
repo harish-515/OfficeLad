@@ -6,15 +6,48 @@
     <members>
         <member name="T:OfficeLad.Services.VehicleManagement.Domain.Entities.Vehicle">
             <summary>
-            Vehicle Entity.
+            Vehicle entity.
             </summary>
-            <seealso cref="T:Centaurus.Domain.Entity`1" />
         </member>
-        <member name="M:OfficeLad.Services.VehicleManagement.Domain.Entities.Vehicle.#ctor(System.Guid)">
+        <member name="P:OfficeLad.Services.VehicleManagement.Domain.Entities.Vehicle.Id">
             <summary>
-            Initializes a new instance of the <see cref="T:OfficeLad.Services.VehicleManagement.Domain.Entities.Vehicle"/> class.
+            Gets or sets the identifier.
             </summary>
-            <param name="id">The value of the entity key.</param>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="P:OfficeLad.Services.VehicleManagement.Domain.Entities.Vehicle.LicenseNumber">
+            <summary>
+            Gets or sets the license number.
+            </summary>
+            <value>
+            The license number.
+            </value>
+        </member>
+        <member name="P:OfficeLad.Services.VehicleManagement.Domain.Entities.Vehicle.Brand">
+            <summary>
+            Gets or sets the brand.
+            </summary>
+            <value>
+            The brand.
+            </value>
+        </member>
+        <member name="P:OfficeLad.Services.VehicleManagement.Domain.Entities.Vehicle.Type">
+            <summary>
+            Gets or sets the type.
+            </summary>
+            <value>
+            The type.
+            </value>
+        </member>
+        <member name="P:OfficeLad.Services.VehicleManagement.Domain.Entities.Vehicle.OwnerId">
+            <summary>
+            Gets or sets the owner identifier.
+            </summary>
+            <value>
+            The owner identifier.
+            </value>
         </member>
     </members>
 </doc>
