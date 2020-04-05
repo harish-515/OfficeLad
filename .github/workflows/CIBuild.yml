@@ -25,10 +25,10 @@ jobs:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
     - name: Build
-      run: dotnet build Source/Backend/Services/OfficeLad.Services.sln --configuration Release
+      run: dotnet build Source/Backend/Services/OL.Svcs.sln --configuration Release
     
     - name: Run Unit Tests
-      run: dotnet test Source/Backend/Services/OfficeLad.Services.sln -p:CollectCoverage=true -p:CoverletOutputFormat=opencover
+      run: dotnet test Source/Backend/Services/OL.Svcs.sln -p:CollectCoverage=true -p:CoverletOutputFormat=opencover
     
     - name: Sonar Cloud Scan End
       run: dotnet sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
