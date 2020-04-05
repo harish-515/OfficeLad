@@ -13,14 +13,31 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="OfficeLad.Services.VehicleManagement.Persistence.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <AdditionalFiles Include="..\SolutionItems\stylecop.json" Link="stylecop.json" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.3" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="3.1.3" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.1.3" />
     <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OfficeLad.Services.VehicleManagement.Application\OfficeLad.Services.VehicleManagement.Application.csproj" />
+    <ProjectReference Include="..\OfficeLad.Services.VehicleManagement.Domain\OfficeLad.Services.VehicleManagement.Domain.csproj" />
   </ItemGroup>
 
 </Project>

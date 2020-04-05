@@ -5,24 +5,50 @@
 namespace OfficeLad.Services.VehicleManagement.Domain.Entities
 {
     using System;
-    using System.Collections.Generic;
-    using System.Text;
-    using Centaurus.Domain;
 
     /// <summary>
-    /// Vehicle Entity.
+    /// Vehicle entity.
     /// </summary>
-    /// <seealso cref="Entity{Guid}" />
-    internal class Vehicle : Entity<Guid>
+    public class Vehicle
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="Vehicle"/> class.
+        /// Gets or sets the identifier.
         /// </summary>
-        /// <param name="id">The value of the entity key.</param>
-        public Vehicle(Guid id)
-            : base(id)
-        {
+        /// <value>
+        /// The identifier.
+        /// </value>
+        public Guid Id { get; set; }
 
-        }
+        /// <summary>
+        /// Gets or sets the license number.
+        /// </summary>
+        /// <value>
+        /// The license number.
+        /// </value>
+        public string LicenseNumber { get; set; }
+
+        /// <summary>
+        /// Gets or sets the brand.
+        /// </summary>
+        /// <value>
+        /// The brand.
+        /// </value>
+        public string Brand { get; set; }
+
+        /// <summary>
+        /// Gets or sets the type.
+        /// </summary>
+        /// <value>
+        /// The type.
+        /// </value>
+        public string Type { get; set; }
+
+        /// <summary>
+        /// Gets or sets the owner identifier.
+        /// </summary>
+        /// <value>
+        /// The owner identifier.
+        /// </value>
+        public Guid OwnerId { get; set; }
     }
 }
