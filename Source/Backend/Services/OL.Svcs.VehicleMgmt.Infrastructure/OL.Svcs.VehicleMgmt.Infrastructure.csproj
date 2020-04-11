@@ -31,4 +31,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\OL.Svcs.VehicleMgmt.Application\OL.Svcs.VehicleMgmt.Application.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -52,6 +52,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\OL.Svcs.VehicleMgmt.Application\OL.Svcs.VehicleMgmt.Application.csproj" />
+    <ProjectReference Include="..\OL.Svcs.VehicleMgmt.Infrastructure\OL.Svcs.VehicleMgmt.Infrastructure.csproj" />
     <ProjectReference Include="..\OL.Svcs.VehicleMgmt.Persistence\OL.Svcs.VehicleMgmt.Persistence.csproj" />
   </ItemGroup>
 </Project>

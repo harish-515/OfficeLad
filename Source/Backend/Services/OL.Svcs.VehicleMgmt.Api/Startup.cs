@@ -10,6 +10,7 @@ namespace OL.Svcs.VehicleMgmt.Api
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Hosting;
     using OL.Svcs.VehicleMgmt.Application.Configuration;
+    using OL.Svcs.VehicleMgmt.Infrastructure.Configuration;
     using OL.Svcs.VehicleMgmt.Persistence.Configuration;
     using Serilog;
 
@@ -55,6 +56,7 @@ namespace OL.Svcs.VehicleMgmt.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddPersistence(this.Configuration);
+            services.AddInfrastructure();
             services.AddApplication();
             services.AddControllers();
         }

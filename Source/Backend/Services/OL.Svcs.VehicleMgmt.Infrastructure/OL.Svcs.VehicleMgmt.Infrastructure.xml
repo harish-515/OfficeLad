@@ -4,5 +4,26 @@
         <name>OL.Svcs.VehicleMgmt.Infrastructure</name>
     </assembly>
     <members>
+        <member name="T:OL.Svcs.VehicleMgmt.Infrastructure.Configuration.DIConfiguration">
+            <summary>
+            Dependency Injection Configuration class.
+            </summary>
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Infrastructure.Configuration.DIConfiguration.AddInfrastructure(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Configure dependency injection in application layer.
+            </summary>
+            <param name="services">The services.</param>
+            <returns>Service Collection.</returns>
+        </member>
+        <member name="T:OL.Svcs.VehicleMgmt.Infrastructure.Services.NotificationService">
+            <summary>
+            Notification Service.
+            </summary>
+            <seealso cref="T:OL.Svcs.VehicleMgmt.Application.Abstractions.INotificationService" />
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Infrastructure.Services.NotificationService.SendAsync">
+            <inheritdoc />
+        </member>
     </members>
 </doc>
