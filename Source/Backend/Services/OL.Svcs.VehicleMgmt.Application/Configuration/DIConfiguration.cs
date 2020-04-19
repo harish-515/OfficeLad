@@ -6,6 +6,7 @@ namespace OL.Svcs.VehicleMgmt.Application.Configuration
 {
     using System.Reflection;
     using AutoMapper;
+    using FluentValidation;
     using MediatR;
     using Microsoft.Extensions.DependencyInjection;
     using OL.Svcs.VehicleMgmt.Application.Behaviours;
@@ -25,6 +26,7 @@ namespace OL.Svcs.VehicleMgmt.Application.Configuration
         {
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
             services.AddMediatR(Assembly.GetExecutingAssembly());
+            services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
             services.AddTransient(
                 typeof(IPipelineBehavior<,>),
                 typeof(RequestPerformanceBehaviour<,>));
