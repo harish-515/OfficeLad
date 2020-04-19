@@ -67,6 +67,69 @@
             </summary>
             <param name="entity">The entity.</param>
         </member>
+        <member name="T:OL.Svcs.VehicleMgmt.Application.Abstractions.INotificationService">
+            <summary>
+            Notification Service.
+            </summary>
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Application.Abstractions.INotificationService.SendAsync">
+            <summary>
+            Sends a notification asynchronously.
+            </summary>
+            <returns>Task object.</returns>
+        </member>
+        <member name="T:OL.Svcs.VehicleMgmt.Application.Behaviours.RequestLogger`1">
+            <summary>
+            Request logger behaviour.
+            </summary>
+            <typeparam name="TRequest">The type of the request.</typeparam>
+            <seealso cref="T:MediatR.Pipeline.IRequestPreProcessor`1" />
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Application.Behaviours.RequestLogger`1.#ctor(Microsoft.Extensions.Logging.ILogger{`0})">
+            <summary>
+            Initializes a new instance of the <see cref="T:OL.Svcs.VehicleMgmt.Application.Behaviours.RequestLogger`1"/> class.
+            </summary>
+            <param name="logger">The logger.</param>
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Application.Behaviours.RequestLogger`1.Process(`0,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="T:OL.Svcs.VehicleMgmt.Application.Behaviours.RequestPerformanceBehaviour`2">
+            <summary>
+            Request performance behaviour.
+            </summary>
+            <typeparam name="TRequest">The type of the request.</typeparam>
+            <typeparam name="TResponse">The type of the response.</typeparam>
+            <seealso cref="T:MediatR.IPipelineBehavior`2" />
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Application.Behaviours.RequestPerformanceBehaviour`2.#ctor(Microsoft.Extensions.Logging.ILogger{`0})">
+            <summary>
+            Initializes a new instance of the
+            <see cref="T:OL.Svcs.VehicleMgmt.Application.Behaviours.RequestPerformanceBehaviour`2"/> class.
+            </summary>
+            <param name="logger">Logger object.</param>
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Application.Behaviours.RequestPerformanceBehaviour`2.Handle(`0,System.Threading.CancellationToken,MediatR.RequestHandlerDelegate{`1})">
+            <inheritdoc />
+        </member>
+        <member name="T:OL.Svcs.VehicleMgmt.Application.Behaviours.RequestValidationBehaviour`2">
+            <summary>
+            Request validation behavior class.
+            </summary>
+            <typeparam name="TRequest">The type of the request.</typeparam>
+            <typeparam name="TResponse">The type of the response.</typeparam>
+            <seealso cref="T:MediatR.IPipelineBehavior`2" />
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Application.Behaviours.RequestValidationBehaviour`2.#ctor(System.Collections.Generic.IEnumerable{FluentValidation.IValidator{`0}})">
+            <summary>
+            Initializes a new instance of the
+            <see cref="T:OL.Svcs.VehicleMgmt.Application.Behaviours.RequestValidationBehaviour`2"/> class.
+            </summary>
+            <param name="validators">The validators.</param>
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Application.Behaviours.RequestValidationBehaviour`2.Handle(`0,System.Threading.CancellationToken,MediatR.RequestHandlerDelegate{`1})">
+            <inheritdoc />
+        </member>
         <member name="T:OL.Svcs.VehicleMgmt.Application.Configuration.DIConfiguration">
             <summary>
             Dependency Injection Configuration class.
@@ -78,6 +141,157 @@
             </summary>
             <param name="services">The services.</param>
             <returns>Service Collection.</returns>
+        </member>
+        <member name="T:OL.Svcs.VehicleMgmt.Application.Exceptions.BadRequestException">
+            <summary>
+            Bad request exception.
+            </summary>
+            <seealso cref="T:System.Exception" />
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Application.Exceptions.BadRequestException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:OL.Svcs.VehicleMgmt.Application.Exceptions.BadRequestException"/> class.
+            </summary>
+            <param name="message">Exception message.</param>
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Application.Exceptions.BadRequestException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:OL.Svcs.VehicleMgmt.Application.Exceptions.BadRequestException"/> class.
+            </summary>
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Application.Exceptions.BadRequestException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:OL.Svcs.VehicleMgmt.Application.Exceptions.BadRequestException"/> class.
+            </summary>
+            <param name="message">Exception message.</param>
+            <param name="innerException">Inner exception.</param>
+        </member>
+        <member name="T:OL.Svcs.VehicleMgmt.Application.Exceptions.DeleteFailureException">
+            <summary>
+            Delete failure exception.
+            </summary>
+            <seealso cref="T:System.Exception" />
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Application.Exceptions.DeleteFailureException.#ctor(System.String,System.Object,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:OL.Svcs.VehicleMgmt.Application.Exceptions.DeleteFailureException"/> class.
+            </summary>
+            <param name="name">Name of entity.</param>
+            <param name="key">Key of the entity.</param>
+            <param name="message">Exception message.</param>
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Application.Exceptions.DeleteFailureException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:OL.Svcs.VehicleMgmt.Application.Exceptions.DeleteFailureException"/> class.
+            </summary>
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Application.Exceptions.DeleteFailureException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:OL.Svcs.VehicleMgmt.Application.Exceptions.DeleteFailureException"/> class.
+            </summary>
+            <param name="message">Exception message.</param>
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Application.Exceptions.DeleteFailureException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:OL.Svcs.VehicleMgmt.Application.Exceptions.DeleteFailureException"/> class.
+            </summary>
+            <param name="message">Exception message.</param>
+            <param name="innerException">Inner exception.</param>
+        </member>
+        <member name="T:OL.Svcs.VehicleMgmt.Application.Exceptions.NotFoundException">
+            <summary>
+            Not found exception.
+            </summary>
+            <seealso cref="T:System.Exception" />
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Application.Exceptions.NotFoundException.#ctor(System.String,System.Object)">
+            <summary>
+            Initializes a new instance of the <see cref="T:OL.Svcs.VehicleMgmt.Application.Exceptions.NotFoundException"/> class.
+            </summary>
+            <param name="name">Name of the entity.</param>
+            <param name="key">Key of the entity.</param>
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Application.Exceptions.NotFoundException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:OL.Svcs.VehicleMgmt.Application.Exceptions.NotFoundException"/> class.
+            </summary>
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Application.Exceptions.NotFoundException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:OL.Svcs.VehicleMgmt.Application.Exceptions.NotFoundException"/> class.
+            </summary>
+            <param name="message">Exception message.</param>
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Application.Exceptions.NotFoundException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:OL.Svcs.VehicleMgmt.Application.Exceptions.NotFoundException"/> class.
+            </summary>
+            <param name="message">Exception message.</param>
+            <param name="innerException">Inner exception.</param>
+        </member>
+        <member name="T:OL.Svcs.VehicleMgmt.Application.Exceptions.ValidationException">
+            <summary>
+            Validation exception.
+            </summary>
+            <seealso cref="T:System.Exception" />
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Application.Exceptions.ValidationException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:OL.Svcs.VehicleMgmt.Application.Exceptions.ValidationException"/> class.
+            </summary>
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Application.Exceptions.ValidationException.#ctor(System.Collections.Generic.List{FluentValidation.Results.ValidationFailure})">
+            <summary>
+            Initializes a new instance of the <see cref="T:OL.Svcs.VehicleMgmt.Application.Exceptions.ValidationException"/> class.
+            </summary>
+            <param name="failures">List of failures.</param>
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Application.Exceptions.ValidationException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:OL.Svcs.VehicleMgmt.Application.Exceptions.ValidationException"/> class.
+            </summary>
+            <param name="message">Exception message.</param>
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Application.Exceptions.ValidationException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:OL.Svcs.VehicleMgmt.Application.Exceptions.ValidationException"/> class.
+            </summary>
+            <param name="message">Exception message.</param>
+            <param name="innerException">Inner exception.</param>
+        </member>
+        <member name="P:OL.Svcs.VehicleMgmt.Application.Exceptions.ValidationException.Failures">
+            <summary>
+            Gets the list of failures.
+            </summary>
+            <value>
+            The failures.
+            </value>
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Application.Exceptions.ValidationException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <inheritdoc />
+        </member>
+        <member name="T:OL.Svcs.VehicleMgmt.Application.Mappings.IMapFrom`1">
+            <summary>
+            Map from interface.
+            </summary>
+            <typeparam name="T">Entity type.</typeparam>
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Application.Mappings.IMapFrom`1.Mapping(AutoMapper.Profile)">
+            <summary>
+            Mapping the specified profile.
+            </summary>
+            <param name="profile">The profile.</param>
+        </member>
+        <member name="T:OL.Svcs.VehicleMgmt.Application.Mappings.MappingProfile">
+            <summary>
+            Mapping profile.
+            </summary>
+            <seealso cref="T:AutoMapper.Profile" />
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Application.Mappings.MappingProfile.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:OL.Svcs.VehicleMgmt.Application.Mappings.MappingProfile"/> class.
+            </summary>
         </member>
         <member name="T:OL.Svcs.VehicleMgmt.Application.Miscellaneous.SeedSampleData.SampleDataSeeder">
             <summary>
@@ -122,6 +336,464 @@
             <param name="request">The request.</param>
             <param name="cancellationToken">The cancellation token.</param>
             <returns>unit value.</returns>
+        </member>
+        <member name="T:OL.Svcs.VehicleMgmt.Application.Vehicles.Commands.RegisterVehicle.RegisterVehicleCommand">
+            <summary>
+            Register vehicle command class.
+            </summary>
+            <seealso cref="T:MediatR.IRequest" />
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Application.Vehicles.Commands.RegisterVehicle.RegisterVehicleCommand.#ctor(System.String,System.String,System.String,System.Guid)">
+            <summary>
+            Initializes a new instance of the <see cref="T:OL.Svcs.VehicleMgmt.Application.Vehicles.Commands.RegisterVehicle.RegisterVehicleCommand"/> class.
+            </summary>
+            <param name="licenseNumber">The license number.</param>
+            <param name="brand">The brand.</param>
+            <param name="type">The type.</param>
+            <param name="ownerId">The owner identifier.</param>
+        </member>
+        <member name="P:OL.Svcs.VehicleMgmt.Application.Vehicles.Commands.RegisterVehicle.RegisterVehicleCommand.LicenseNumber">
+            <summary>
+            Gets the license number.
+            </summary>
+            <value>
+            The license number.
+            </value>
+        </member>
+        <member name="P:OL.Svcs.VehicleMgmt.Application.Vehicles.Commands.RegisterVehicle.RegisterVehicleCommand.Brand">
+            <summary>
+            Gets the brand.
+            </summary>
+            <value>
+            The brand.
+            </value>
+        </member>
+        <member name="P:OL.Svcs.VehicleMgmt.Application.Vehicles.Commands.RegisterVehicle.RegisterVehicleCommand.Type">
+            <summary>
+            Gets the type.
+            </summary>
+            <value>
+            The type.
+            </value>
+        </member>
+        <member name="P:OL.Svcs.VehicleMgmt.Application.Vehicles.Commands.RegisterVehicle.RegisterVehicleCommand.OwnerId">
+            <summary>
+            Gets the owner identifier.
+            </summary>
+            <value>
+            The owner identifier.
+            </value>
+        </member>
+        <member name="T:OL.Svcs.VehicleMgmt.Application.Vehicles.Commands.RegisterVehicle.RegisterVehicleCommandHandler">
+            <summary>
+            Register vehicle command handler.
+            </summary>
+            <seealso cref="T:MediatR.IRequestHandler`1" />
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Application.Vehicles.Commands.RegisterVehicle.RegisterVehicleCommandHandler.#ctor(OL.Svcs.VehicleMgmt.Application.Abstractions.IGenericRepository{OL.Svcs.VehicleMgmt.Domain.Entities.Vehicle,System.Guid},MediatR.IMediator)">
+            <summary>
+            Initializes a new instance of the <see cref="T:OL.Svcs.VehicleMgmt.Application.Vehicles.Commands.RegisterVehicle.RegisterVehicleCommandHandler" /> class.
+            </summary>
+            <param name="vehicleRepository">The vehicle repository.</param>
+            <param name="mediator">The mediator.</param>
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Application.Vehicles.Commands.RegisterVehicle.RegisterVehicleCommandHandler.Handle(OL.Svcs.VehicleMgmt.Application.Vehicles.Commands.RegisterVehicle.RegisterVehicleCommand,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="T:OL.Svcs.VehicleMgmt.Application.Vehicles.Commands.RegisterVehicle.RegisterVehicleCommandValidationsCollection">
+            <summary>
+            Register vehicle command validations collection.
+            </summary>
+            <seealso cref="T:FluentValidation.AbstractValidator`1" />
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Application.Vehicles.Commands.RegisterVehicle.RegisterVehicleCommandValidationsCollection.#ctor">
+            <summary>
+            Initializes a new instance of the
+            <see cref="T:OL.Svcs.VehicleMgmt.Application.Vehicles.Commands.RegisterVehicle.RegisterVehicleCommandValidationsCollection"/> class.
+            </summary>
+        </member>
+        <member name="T:OL.Svcs.VehicleMgmt.Application.Vehicles.Commands.RegisterVehicle.VehicleRegistered">
+            <summary>
+            Vehicle registered notification.
+            </summary>
+            <seealso cref="T:MediatR.INotification" />
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Application.Vehicles.Commands.RegisterVehicle.VehicleRegistered.#ctor(System.Guid)">
+            <summary>
+            Initializes a new instance of the <see cref="T:OL.Svcs.VehicleMgmt.Application.Vehicles.Commands.RegisterVehicle.VehicleRegistered"/> class.
+            </summary>
+            <param name="id">The identifier.</param>
+        </member>
+        <member name="P:OL.Svcs.VehicleMgmt.Application.Vehicles.Commands.RegisterVehicle.VehicleRegistered.Id">
+            <summary>
+            Gets the identifier.
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="T:OL.Svcs.VehicleMgmt.Application.Vehicles.Commands.RegisterVehicle.VehicleRegisteredHandler">
+            <summary>
+            Vehicle registered handler.
+            </summary>
+            <seealso cref="T:MediatR.NotificationHandler`1" />
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Application.Vehicles.Commands.RegisterVehicle.VehicleRegisteredHandler.#ctor(OL.Svcs.VehicleMgmt.Application.Abstractions.INotificationService)">
+            <summary>
+            Initializes a new instance of the <see cref="T:OL.Svcs.VehicleMgmt.Application.Vehicles.Commands.RegisterVehicle.VehicleRegisteredHandler"/> class.
+            </summary>
+            <param name="notification">The notification.</param>
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Application.Vehicles.Commands.RegisterVehicle.VehicleRegisteredHandler.Handle(OL.Svcs.VehicleMgmt.Application.Vehicles.Commands.RegisterVehicle.VehicleRegistered,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="T:OL.Svcs.VehicleMgmt.Application.Vehicles.Commands.RemoveVehicle.RemoveVehicleCommand">
+            <summary>
+            Update vehicle command class.
+            </summary>
+            <seealso cref="T:MediatR.IRequest" />
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Application.Vehicles.Commands.RemoveVehicle.RemoveVehicleCommand.#ctor(System.Guid)">
+            <summary>
+            Initializes a new instance of the <see cref="T:OL.Svcs.VehicleMgmt.Application.Vehicles.Commands.RemoveVehicle.RemoveVehicleCommand"/> class.
+            </summary>
+            <param name="id">The identifier.</param>
+        </member>
+        <member name="P:OL.Svcs.VehicleMgmt.Application.Vehicles.Commands.RemoveVehicle.RemoveVehicleCommand.Id">
+            <summary>
+            Gets identifier.
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="T:OL.Svcs.VehicleMgmt.Application.Vehicles.Commands.RemoveVehicle.RemoveVehicleCommandHandler">
+            <summary>
+            Remove vehicle command handler.
+            </summary>
+            <seealso cref="T:MediatR.IRequestHandler`1" />
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Application.Vehicles.Commands.RemoveVehicle.RemoveVehicleCommandHandler.#ctor(OL.Svcs.VehicleMgmt.Application.Abstractions.IGenericRepository{OL.Svcs.VehicleMgmt.Domain.Entities.Vehicle,System.Guid},MediatR.IMediator)">
+            <summary>
+            Initializes a new instance of the <see cref="T:OL.Svcs.VehicleMgmt.Application.Vehicles.Commands.RemoveVehicle.RemoveVehicleCommandHandler" /> class.
+            </summary>
+            <param name="vehicleRepository">The vehicle repository.</param>
+            <param name="mediator">The mediator.</param>
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Application.Vehicles.Commands.RemoveVehicle.RemoveVehicleCommandHandler.Handle(OL.Svcs.VehicleMgmt.Application.Vehicles.Commands.RemoveVehicle.RemoveVehicleCommand,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="T:OL.Svcs.VehicleMgmt.Application.Vehicles.Commands.RemoveVehicle.RemoveVehicleCommandValidationsCollection">
+            <summary>
+            Remove vehicle command validations collection.
+            </summary>
+            <seealso cref="T:FluentValidation.AbstractValidator`1" />
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Application.Vehicles.Commands.RemoveVehicle.RemoveVehicleCommandValidationsCollection.#ctor">
+            <summary>
+            Initializes a new instance of the
+            <see cref="T:OL.Svcs.VehicleMgmt.Application.Vehicles.Commands.RemoveVehicle.RemoveVehicleCommandValidationsCollection"/> class.
+            </summary>
+        </member>
+        <member name="T:OL.Svcs.VehicleMgmt.Application.Vehicles.Commands.RemoveVehicle.VehicleRemoved">
+            <summary>
+            Vehicle removed notification.
+            </summary>
+            <seealso cref="T:MediatR.INotification" />
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Application.Vehicles.Commands.RemoveVehicle.VehicleRemoved.#ctor(System.Guid)">
+            <summary>
+            Initializes a new instance of the <see cref="T:OL.Svcs.VehicleMgmt.Application.Vehicles.Commands.RemoveVehicle.VehicleRemoved"/> class.
+            </summary>
+            <param name="id">The identifier.</param>
+        </member>
+        <member name="P:OL.Svcs.VehicleMgmt.Application.Vehicles.Commands.RemoveVehicle.VehicleRemoved.Id">
+            <summary>
+            Gets the identifier.
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="T:OL.Svcs.VehicleMgmt.Application.Vehicles.Commands.RemoveVehicle.VehicleRemovedHandler">
+            <summary>
+            Vehicle removed handler.
+            </summary>
+            <seealso cref="T:MediatR.NotificationHandler`1" />
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Application.Vehicles.Commands.RemoveVehicle.VehicleRemovedHandler.#ctor(OL.Svcs.VehicleMgmt.Application.Abstractions.INotificationService)">
+            <summary>
+            Initializes a new instance of the <see cref="T:OL.Svcs.VehicleMgmt.Application.Vehicles.Commands.RemoveVehicle.VehicleRemovedHandler"/> class.
+            </summary>
+            <param name="notification">The notification.</param>
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Application.Vehicles.Commands.RemoveVehicle.VehicleRemovedHandler.Handle(OL.Svcs.VehicleMgmt.Application.Vehicles.Commands.RemoveVehicle.VehicleRemoved,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="T:OL.Svcs.VehicleMgmt.Application.Vehicles.Commands.UpdateVehicle.UpdateVehicleCommand">
+            <summary>
+            Update vehicle command class.
+            </summary>
+            <seealso cref="T:MediatR.IRequest" />
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Application.Vehicles.Commands.UpdateVehicle.UpdateVehicleCommand.#ctor(System.Guid,System.String,System.String,System.String,System.Guid)">
+            <summary>
+            Initializes a new instance of the <see cref="T:OL.Svcs.VehicleMgmt.Application.Vehicles.Commands.UpdateVehicle.UpdateVehicleCommand" /> class.
+            </summary>
+            <param name="id">The identifier.</param>
+            <param name="licenseNumber">The license number.</param>
+            <param name="brand">The brand.</param>
+            <param name="type">The type.</param>
+            <param name="ownerId">The owner identifier.</param>
+        </member>
+        <member name="P:OL.Svcs.VehicleMgmt.Application.Vehicles.Commands.UpdateVehicle.UpdateVehicleCommand.Id">
+            <summary>
+            Gets identifier.
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="P:OL.Svcs.VehicleMgmt.Application.Vehicles.Commands.UpdateVehicle.UpdateVehicleCommand.LicenseNumber">
+            <summary>
+            Gets the license number.
+            </summary>
+            <value>
+            The license number.
+            </value>
+        </member>
+        <member name="P:OL.Svcs.VehicleMgmt.Application.Vehicles.Commands.UpdateVehicle.UpdateVehicleCommand.Brand">
+            <summary>
+            Gets the brand.
+            </summary>
+            <value>
+            The brand.
+            </value>
+        </member>
+        <member name="P:OL.Svcs.VehicleMgmt.Application.Vehicles.Commands.UpdateVehicle.UpdateVehicleCommand.Type">
+            <summary>
+            Gets the type.
+            </summary>
+            <value>
+            The type.
+            </value>
+        </member>
+        <member name="P:OL.Svcs.VehicleMgmt.Application.Vehicles.Commands.UpdateVehicle.UpdateVehicleCommand.OwnerId">
+            <summary>
+            Gets the owner identifier.
+            </summary>
+            <value>
+            The owner identifier.
+            </value>
+        </member>
+        <member name="T:OL.Svcs.VehicleMgmt.Application.Vehicles.Commands.UpdateVehicle.UpdateVehicleCommandHandler">
+            <summary>
+            Register vehicle command handler.
+            </summary>
+            <seealso cref="T:MediatR.IRequestHandler`1" />
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Application.Vehicles.Commands.UpdateVehicle.UpdateVehicleCommandHandler.#ctor(OL.Svcs.VehicleMgmt.Application.Abstractions.IGenericRepository{OL.Svcs.VehicleMgmt.Domain.Entities.Vehicle,System.Guid},MediatR.IMediator)">
+            <summary>
+            Initializes a new instance of the <see cref="T:OL.Svcs.VehicleMgmt.Application.Vehicles.Commands.UpdateVehicle.UpdateVehicleCommandHandler" /> class.
+            </summary>
+            <param name="vehicleRepository">The vehicle repository.</param>
+            <param name="mediator">The mediator.</param>
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Application.Vehicles.Commands.UpdateVehicle.UpdateVehicleCommandHandler.Handle(OL.Svcs.VehicleMgmt.Application.Vehicles.Commands.UpdateVehicle.UpdateVehicleCommand,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="T:OL.Svcs.VehicleMgmt.Application.Vehicles.Commands.UpdateVehicle.UpdateVehicleCommandValidationsCollection">
+            <summary>
+            Update vehicle command validations collection.
+            </summary>
+            <seealso cref="T:FluentValidation.AbstractValidator`1" />
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Application.Vehicles.Commands.UpdateVehicle.UpdateVehicleCommandValidationsCollection.#ctor">
+            <summary>
+            Initializes a new instance of the
+            <see cref="T:OL.Svcs.VehicleMgmt.Application.Vehicles.Commands.UpdateVehicle.UpdateVehicleCommandValidationsCollection"/> class.
+            </summary>
+        </member>
+        <member name="T:OL.Svcs.VehicleMgmt.Application.Vehicles.Commands.UpdateVehicle.VehicleUpdated">
+            <summary>
+            Vehicle updated notification.
+            </summary>
+            <seealso cref="T:MediatR.INotification" />
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Application.Vehicles.Commands.UpdateVehicle.VehicleUpdated.#ctor(System.Guid)">
+            <summary>
+            Initializes a new instance of the <see cref="T:OL.Svcs.VehicleMgmt.Application.Vehicles.Commands.UpdateVehicle.VehicleUpdated"/> class.
+            </summary>
+            <param name="id">The identifier.</param>
+        </member>
+        <member name="P:OL.Svcs.VehicleMgmt.Application.Vehicles.Commands.UpdateVehicle.VehicleUpdated.Id">
+            <summary>
+            Gets the identifier.
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="T:OL.Svcs.VehicleMgmt.Application.Vehicles.Commands.UpdateVehicle.VehicleUpdatedHandler">
+            <summary>
+            Vehicle registered handler.
+            </summary>
+            <seealso cref="T:MediatR.NotificationHandler`1" />
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Application.Vehicles.Commands.UpdateVehicle.VehicleUpdatedHandler.#ctor(OL.Svcs.VehicleMgmt.Application.Abstractions.INotificationService)">
+            <summary>
+            Initializes a new instance of the <see cref="T:OL.Svcs.VehicleMgmt.Application.Vehicles.Commands.UpdateVehicle.VehicleUpdatedHandler"/> class.
+            </summary>
+            <param name="notification">The notification.</param>
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Application.Vehicles.Commands.UpdateVehicle.VehicleUpdatedHandler.Handle(OL.Svcs.VehicleMgmt.Application.Vehicles.Commands.UpdateVehicle.VehicleUpdated,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="T:OL.Svcs.VehicleMgmt.Application.Vehicles.Queries.GetVehicleDetail.GetVehicleDetailQuery">
+            <summary>
+            Get vehicle detail query.
+            </summary>
+            <seealso cref="T:MediatR.IRequest`1" />
+        </member>
+        <member name="P:OL.Svcs.VehicleMgmt.Application.Vehicles.Queries.GetVehicleDetail.GetVehicleDetailQuery.Id">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="T:OL.Svcs.VehicleMgmt.Application.Vehicles.Queries.GetVehicleDetail.GetVehicleDetailQueryHandler">
+            <summary>
+            Vehicles list query handler.
+            </summary>
+            <seealso cref="T:MediatR.IRequestHandler`2" />
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Application.Vehicles.Queries.GetVehicleDetail.GetVehicleDetailQueryHandler.#ctor(OL.Svcs.VehicleMgmt.Application.Abstractions.IGenericRepository{OL.Svcs.VehicleMgmt.Domain.Entities.Vehicle,System.Guid},AutoMapper.IMapper)">
+            <summary>
+            Initializes a new instance of the <see cref="T:OL.Svcs.VehicleMgmt.Application.Vehicles.Queries.GetVehicleDetail.GetVehicleDetailQueryHandler"/> class.
+            </summary>
+            <param name="vehicleRepository">The vehicle repository.</param>
+            <param name="mapper">The mapper.</param>
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Application.Vehicles.Queries.GetVehicleDetail.GetVehicleDetailQueryHandler.Handle(OL.Svcs.VehicleMgmt.Application.Vehicles.Queries.GetVehicleDetail.GetVehicleDetailQuery,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="T:OL.Svcs.VehicleMgmt.Application.Vehicles.Queries.GetVehicleDetail.GetVehicleDetailQueryValidatonsCollection">
+            <summary>
+            Get vehicle detail query validations.
+            </summary>
+            <seealso cref="T:FluentValidation.AbstractValidator`1" />
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Application.Vehicles.Queries.GetVehicleDetail.GetVehicleDetailQueryValidatonsCollection.#ctor">
+            <summary>
+            Initializes a new instance of the
+            <see cref="T:OL.Svcs.VehicleMgmt.Application.Vehicles.Queries.GetVehicleDetail.GetVehicleDetailQueryValidatonsCollection"/> class.
+            </summary>
+        </member>
+        <member name="T:OL.Svcs.VehicleMgmt.Application.Vehicles.Queries.GetVehicleDetail.VehicleLookupDto">
+            <summary>
+            Vehicle lookup dto.
+            </summary>
+            <seealso cref="T:OL.Svcs.VehicleMgmt.Application.Mappings.IMapFrom`1" />
+        </member>
+        <member name="P:OL.Svcs.VehicleMgmt.Application.Vehicles.Queries.GetVehicleDetail.VehicleLookupDto.Id">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+            <value>
+            The owner identifier.
+            </value>
+        </member>
+        <member name="P:OL.Svcs.VehicleMgmt.Application.Vehicles.Queries.GetVehicleDetail.VehicleLookupDto.LicenseNumber">
+            <summary>
+            Gets or sets the license number.
+            </summary>
+            <value>
+            The license number.
+            </value>
+        </member>
+        <member name="P:OL.Svcs.VehicleMgmt.Application.Vehicles.Queries.GetVehicleDetail.VehicleLookupDto.Brand">
+            <summary>
+            Gets or sets the brand.
+            </summary>
+            <value>
+            The brand.
+            </value>
+        </member>
+        <member name="P:OL.Svcs.VehicleMgmt.Application.Vehicles.Queries.GetVehicleDetail.VehicleLookupDto.Type">
+            <summary>
+            Gets or sets the type.
+            </summary>
+            <value>
+            The type.
+            </value>
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Application.Vehicles.Queries.GetVehicleDetail.VehicleLookupDto.Mapping(AutoMapper.Profile)">
+            <inheritdoc />
+        </member>
+        <member name="T:OL.Svcs.VehicleMgmt.Application.Vehicles.Queries.GetVehiclesList.GetVehiclesListQuery">
+            <summary>
+            Vehicles list query.
+            </summary>
+            <seealso cref="T:MediatR.IRequest`1" />
+        </member>
+        <member name="T:OL.Svcs.VehicleMgmt.Application.Vehicles.Queries.GetVehiclesList.GetVehiclesListQueryHandler">
+            <summary>
+            Vehicles list query handler.
+            </summary>
+            <seealso cref="T:MediatR.IRequestHandler`2" />
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Application.Vehicles.Queries.GetVehiclesList.GetVehiclesListQueryHandler.#ctor(OL.Svcs.VehicleMgmt.Application.Abstractions.IGenericRepository{OL.Svcs.VehicleMgmt.Domain.Entities.Vehicle,System.Guid},AutoMapper.IMapper)">
+            <summary>
+            Initializes a new instance of the <see cref="T:OL.Svcs.VehicleMgmt.Application.Vehicles.Queries.GetVehiclesList.GetVehiclesListQueryHandler"/> class.
+            </summary>
+            <param name="vehicleRepository">The vehicle repository.</param>
+            <param name="mapper">The mapper.</param>
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Application.Vehicles.Queries.GetVehiclesList.GetVehiclesListQueryHandler.Handle(OL.Svcs.VehicleMgmt.Application.Vehicles.Queries.GetVehiclesList.GetVehiclesListQuery,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="T:OL.Svcs.VehicleMgmt.Application.Vehicles.Queries.GetVehiclesList.VehicleLookupDto">
+            <summary>
+            Vehicle lookup dto.
+            </summary>
+            <seealso cref="T:OL.Svcs.VehicleMgmt.Application.Mappings.IMapFrom`1" />
+        </member>
+        <member name="P:OL.Svcs.VehicleMgmt.Application.Vehicles.Queries.GetVehiclesList.VehicleLookupDto.Id">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+            <value>
+            The owner identifier.
+            </value>
+        </member>
+        <member name="P:OL.Svcs.VehicleMgmt.Application.Vehicles.Queries.GetVehiclesList.VehicleLookupDto.LicenseNumber">
+            <summary>
+            Gets or sets the license number.
+            </summary>
+            <value>
+            The license number.
+            </value>
+        </member>
+        <member name="P:OL.Svcs.VehicleMgmt.Application.Vehicles.Queries.GetVehiclesList.VehicleLookupDto.Brand">
+            <summary>
+            Gets or sets the brand.
+            </summary>
+            <value>
+            The brand.
+            </value>
+        </member>
+        <member name="P:OL.Svcs.VehicleMgmt.Application.Vehicles.Queries.GetVehiclesList.VehicleLookupDto.Type">
+            <summary>
+            Gets or sets the type.
+            </summary>
+            <value>
+            The type.
+            </value>
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Application.Vehicles.Queries.GetVehiclesList.VehicleLookupDto.Mapping(AutoMapper.Profile)">
+            <inheritdoc />
         </member>
     </members>
 </doc>

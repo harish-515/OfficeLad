@@ -4,6 +4,80 @@
         <name>OL.Svcs.VehicleMgmt.Api</name>
     </assembly>
     <members>
+        <member name="T:OL.Svcs.VehicleMgmt.Api.Controllers.BaseController">
+            <summary>
+            Base controller.
+            </summary>
+            <seealso cref="T:Microsoft.AspNetCore.Mvc.ControllerBase" />
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Api.Controllers.BaseController.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:OL.Svcs.VehicleMgmt.Api.Controllers.BaseController"/> class.
+            </summary>
+        </member>
+        <member name="P:OL.Svcs.VehicleMgmt.Api.Controllers.BaseController.Mediator">
+            <summary>
+            Gets mediator.
+            </summary>
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Api.Controllers.BaseController.ModelStateErrorResponseError">
+            <summary>
+            Models the state error response error.
+            </summary>
+            <returns>Action result.</returns>
+        </member>
+        <member name="T:OL.Svcs.VehicleMgmt.Api.Controllers.VehicleController">
+            <summary>
+            Vehicle Controller.
+            </summary>
+            <seealso cref="T:OL.Svcs.VehicleMgmt.Api.Controllers.BaseController" />
+        </member>
+        <member name="M:OL.Svcs.VehicleMgmt.Api.Controllers.VehicleController.Register(OL.Svcs.VehicleMgmt.Api.DTOs.RegisterVehicleDto)">
+            <summary>
+            Register a vehicle.
+            </summary>
+            <param name="registerVehicle">Register vehicle dto.</param>
+            <returns>
+            Action result.
+            </returns>
+        </member>
+        <member name="T:OL.Svcs.VehicleMgmt.Api.DTOs.RegisterVehicleDto">
+            <summary>
+            Register vehicle dto.
+            </summary>
+        </member>
+        <member name="P:OL.Svcs.VehicleMgmt.Api.DTOs.RegisterVehicleDto.LicenseNumber">
+            <summary>
+            Gets or sets the license number.
+            </summary>
+            <value>
+            The license number.
+            </value>
+        </member>
+        <member name="P:OL.Svcs.VehicleMgmt.Api.DTOs.RegisterVehicleDto.Brand">
+            <summary>
+            Gets or sets the brand.
+            </summary>
+            <value>
+            The brand.
+            </value>
+        </member>
+        <member name="P:OL.Svcs.VehicleMgmt.Api.DTOs.RegisterVehicleDto.Type">
+            <summary>
+            Gets or sets the type.
+            </summary>
+            <value>
+            The type.
+            </value>
+        </member>
+        <member name="P:OL.Svcs.VehicleMgmt.Api.DTOs.RegisterVehicleDto.OwnerId">
+            <summary>
+            Gets or sets the owner identifier.
+            </summary>
+            <value>
+            The owner identifier.
+            </value>
+        </member>
         <member name="T:OL.Svcs.VehicleMgmt.Api.Program">
             <summary>
             Vehicle Management Service Program.

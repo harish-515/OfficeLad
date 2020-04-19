@@ -27,6 +27,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.9.10" />
     <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -52,6 +53,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\OL.Svcs.VehicleMgmt.Application\OL.Svcs.VehicleMgmt.Application.csproj" />
+    <ProjectReference Include="..\OL.Svcs.VehicleMgmt.Infrastructure\OL.Svcs.VehicleMgmt.Infrastructure.csproj" />
     <ProjectReference Include="..\OL.Svcs.VehicleMgmt.Persistence\OL.Svcs.VehicleMgmt.Persistence.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Controllers\" />
   </ItemGroup>
 </Project>
